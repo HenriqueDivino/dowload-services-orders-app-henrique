@@ -1,1 +1,1 @@
-A Services Orders System made in Java with MySQL integration for desktop with creating, reading, updating and deleting functionalities to users, customers, services orders and print of each one for relatories related to a technology company
+This application is intended as a demonstration for later projects for any business need of people or enterprise
