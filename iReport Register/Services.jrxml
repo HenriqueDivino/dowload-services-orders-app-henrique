@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec4c4d30-95a0-4435-a22b-c95b3a12eb9c">
+	<property name="ireport.zoom" value="1.6500000000000412"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select SOR.soid, sodate, type, situation, equipment, defect, service, technician, value, CUS.customer, address, phone, email from sotb as SOR inner join customertb as CUS on(CUS.customerid = SOR.customerid);]]>
+	</queryString>
+	<field name="soid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sodate" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situation" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="equipment" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="service" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="technician" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="value" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="soid">
+		<groupExpression><![CDATA[$F{soid}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="97" height="32" uuid="8c57e486-bd91-492d-bf8c-7a68d3b39a62"/>
+				<textElement>
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[Services]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="468" y="15" width="87" height="14" uuid="d3b2a71e-055f-4718-b775-d599b87b1eb4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="9" height="12" uuid="a560c0c5-956b-435c-96d3-0a83e29197e6"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="0" width="19" height="12" uuid="04a2797a-ae49-4cab-8d37-770ade72dd09"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="0" width="36" height="12" uuid="51fd13c1-adc4-4336-8317-0a245e51cdb4"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="0" width="43" height="12" uuid="b575d14f-a056-4e0a-8e56-ec709bdea079"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equipment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="0" width="30" height="12" uuid="0a5965ae-5a60-49b8-96af-9f10bc37fad5"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="0" width="23" height="12" uuid="be7a92c5-adff-43d2-bc29-18af7b06af4a"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="0" width="39" height="12" uuid="ef89cafc-447c-4952-8a03-72cb60815769"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="26" height="12" uuid="c1faed27-1245-4ebc-aa89-5182c2877362"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="43" height="12" uuid="bfe5a1f5-e059-4781-afb7-e73ec0705262"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Technician]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="31" height="12" uuid="3818733a-593c-456d-91ed-aef7bd26686a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{soid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="0" width="50" height="12" uuid="c8cadf84-d156-4f62-8b06-2f8868444920"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sodate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="0" width="46" height="12" uuid="9618bbce-e992-431d-9bf6-631bcd738103"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="0" width="70" height="12" uuid="9d673a7f-8eec-420a-b1d9-858f76fc259d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="56" height="12" uuid="bf1ee90a-06db-4343-ab5f-4656e0c33ed4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="0" width="35" height="12" uuid="203c6d86-9252-49b7-8556-081d054963ff"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="0" width="76" height="12" uuid="42732d69-c859-4325-8fd3-3391366169f8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="74" height="12" uuid="27e3d8be-00bd-4d7a-85c1-fb387049016a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="59" height="12" uuid="dc0c592b-a880-47ee-bc94-bc0b614887d6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{technician}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="49" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="458" y="41" width="97" height="14" uuid="0d6ef291-e65e-404c-ae08-0d3ca6ba72f0"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="40" splitType="Stretch"/>
+	</summary>
+</jasperReport>
